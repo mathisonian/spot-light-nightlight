@@ -11,13 +11,13 @@
  * The FFFT library must be installed (file can be found in the Piccolo project). 
  */
 
+
 #include <ffft.h>
 #include <math.h>
 
 #define ADC_CHANNEL 0
 
 
-// Adapted from adafruit example
 int16_t       capture[FFT_N];    // Audio capture buffer
 complex_t     bfly_buff[FFT_N];  // FFT "butterfly" buffer
 uint16_t      spectrum[FFT_N/2]; // Spectrum output buffer
@@ -111,6 +111,7 @@ int lightSensorValue = 0;
 
 volatile byte current_pin = SOUND_PIN;
 volatile int ready_pin = -1;
+
 
 
 /*
@@ -266,10 +267,13 @@ void loop() {
       b = 0;
     }
     if (maxIdx == 2) {
-    }
-    if (maxIdx == 3) {
       r = 213;
       g = 43;
+      b = 0;
+    }
+    if (maxIdx == 3) {
+      r = 170;
+      g = 85;
       b = 0;
     }
     if (maxIdx == 4) {
